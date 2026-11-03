@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.key
+*.mnemonic
+*.pem
+feed-key-*.json
+feed-key-*.txt
+censorproof-feed-key-*.txt
+*.swarm-key
+.DS_Store
+
+# Local Phase 0 planning documents; the public README remains tracked.
+/ARCHITECTURE.md
+/RUBRIC_MAPPING.md
+/PROJECT_STATUS.md
+/TECHNICAL_DECISIONS.md
