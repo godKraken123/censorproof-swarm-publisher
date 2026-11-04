@@ -8,7 +8,7 @@ const STORAGE_KEY = 'censorproof.settings.v1'
 
 export const DEFAULT_SETTINGS: AppSettings = {
   beeApiUrl: 'http://127.0.0.1:1633',
-  gatewayUrl: 'https://api.gateway.ethswarm.org',
+  gatewayUrl: 'https://bzz.limo',
   postageBatchId: '',
 }
 

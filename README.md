@@ -111,7 +111,7 @@ server runtime, database, Vercel Functions, or server-side Feed signing.
 ### Runtime settings
 
 - Bee API URL defaults to `http://127.0.0.1:1633` for Nook on the publisher's computer.
-- Swarm gateway defaults to `https://api.gateway.ethswarm.org`.
+- Swarm gateway defaults to `https://bzz.limo`.
 - Both URLs can be changed in Settings. The Batch ID is entered in Publish and remembered
   in this browser.
 - To publish from production, Bee's `cors-allowed-origins` must include the exact page
