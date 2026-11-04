@@ -41,6 +41,17 @@ published article or the Feed pointer. If the Vercel app disappears, the raw Swa
 still work while the content is retrievable through Swarm and a gateway or Bee node is
 available.
 
+## Published Swarm reference
+
+The first live test publication is **“A story that stays reachable” (v1)**:
+
+- Feed manifest reference: `4b829733036b1a3e6c650bc6dc52c74bcf9ceb1d9dc53e2c8472d0e435d7f3cc`
+- [Open via bzz.limo](https://bzz.limo/bzz/4b829733036b1a3e6c650bc6dc52c74bcf9ceb1d9dc53e2c8472d0e435d7f3cc/)
+
+The gateway returned HTTP 200 with Feed index 0 and resolved version v1 on 2026-11-04.
+This is the initial test text from the app, not yet the final source-linked Svobodnye
+Novosti demo article; the Feed is intended to be updated at the same manifest address.
+
 ## Read a publication
 
 1. Open the **Read** tab in the Vercel app.
