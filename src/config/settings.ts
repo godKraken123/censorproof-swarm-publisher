@@ -5,6 +5,7 @@ export interface AppSettings {
 }
 
 const STORAGE_KEY = 'censorproof.settings.v1'
+const MODERATED_API_GATEWAY = 'https://api.gateway.ethswarm.org'
 
 export const DEFAULT_SETTINGS: AppSettings = {
   beeApiUrl: 'http://127.0.0.1:1633',
@@ -18,11 +19,19 @@ export function loadSettings(): AppSettings {
     if (!raw) return DEFAULT_SETTINGS
 
     const value = JSON.parse(raw) as Partial<AppSettings>
-    return {
+    const savedGatewayUrl = value.gatewayUrl?.trim().replace(/\/+$/, '')
+    // Older builds saved the approval-gated API gateway as the default. Move
+    // only that exact legacy default to bzz.limo; preserve user-selected gateways.
+    const gatewayUrl = !savedGatewayUrl || savedGatewayUrl === MODERATED_API_GATEWAY
+      ? DEFAULT_SETTINGS.gatewayUrl
+      : savedGatewayUrl
+    const settings = {
       beeApiUrl: value.beeApiUrl || DEFAULT_SETTINGS.beeApiUrl,
-      gatewayUrl: value.gatewayUrl || DEFAULT_SETTINGS.gatewayUrl,
+      gatewayUrl,
       postageBatchId: value.postageBatchId || '',
     }
+    if (gatewayUrl !== value.gatewayUrl) saveSettings(settings)
+    return settings
   } catch {
     return DEFAULT_SETTINGS
   }

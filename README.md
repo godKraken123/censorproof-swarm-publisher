@@ -50,6 +50,9 @@ available.
 
 Readers need no Nook installation, Bee API access, postage batch, or Feed key. You can also
 open the canonical raw gateway link directly, without loading the Vercel app.
+If a gateway returns a “Request Approval for This Hash” page, that is the gateway's retrieval
+policy; it does not mean Bee rejected the upload. The reader reports that case and the default
+gateway is `bzz.limo`.
 
 ## Publish or update
 

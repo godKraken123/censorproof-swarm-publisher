@@ -42,8 +42,18 @@ export async function resolvePublication(
 
   const html = await response.text()
   if (!html.trim()) throw new Error('The Swarm gateway returned an empty publication.')
+  if (isGatewayApprovalPage(html)) {
+    throw new Error(
+      'This gateway requires approval for this hash. In Settings, use https://bzz.limo or request approval from the gateway operator.',
+    )
+  }
 
   return { html, gatewayUrl, manifestReference, resolution: 'manifest' }
+}
+
+function isGatewayApprovalPage(html: string): boolean {
+  const text = html.toLowerCase()
+  return text.includes('request approval for this hash') || text.includes('this hash is not yet approved for retrieval')
 }
 
 export function extractManifestReference(value: string): string {
