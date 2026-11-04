@@ -1,4 +1,4 @@
-# CensorProof (https://publisher1.vercel.app/)
+# CensorProof 
 
 **A browser-based Swarm publisher with one stable, updateable Feed link.**
 
