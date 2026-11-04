@@ -2,6 +2,8 @@
 
 **A browser-based Swarm publisher with one stable, updateable Feed link.**
 
+**Live app:** [publisher1.vercel.app](https://publisher1.vercel.app/)
+
 CensorProof publishes an article to Ethereum Swarm and points a Swarm Feed at the latest
 version. The publisher's browser signs Feed updates locally. Readers retrieve the publication
 from Swarm through a gateway; Vercel serves only the static application interface.
