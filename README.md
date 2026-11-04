@@ -43,14 +43,17 @@ available.
 
 ## Published Swarm reference
 
-The first live test publication is **“A story that stays reachable” (v1)**:
+This Feed-manifest reference has been published and updated. Its current content is the
+test article **“test-2 — Publish version 2”**:
 
 - Feed manifest reference: `4b829733036b1a3e6c650bc6dc52c74bcf9ceb1d9dc53e2c8472d0e435d7f3cc`
 - [Open via bzz.limo](https://bzz.limo/bzz/4b829733036b1a3e6c650bc6dc52c74bcf9ceb1d9dc53e2c8472d0e435d7f3cc/)
 
-The gateway returned HTTP 200 with Feed index 0 and resolved version v1 on 2026-11-04.
-This is the initial test text from the app, not yet the final source-linked Svobodnye
-Novosti demo article; the Feed is intended to be updated at the same manifest address.
+On 2026-11-04, the same manifest resolved first to Feed index 0 and then to Feed index 1;
+the latest gateway response contained the v2 test text. The header
+`Swarm-Feed-Resolved-Version: v1` describes Bee's Feed payload format, not the article's
+revision number. This is still test content, not the final source-linked Svobodnye Novosti
+demo article.
 
 ## Read a publication
 
@@ -108,8 +111,9 @@ Bee node. These checks apply to publishers; readers only need the public gateway
 - The app does not create or fund postage batches. The publisher supplies a usable Batch ID.
 - Nook's Bee API must allow the exact Vercel page origin. A browser may also ask permission
   before connecting from the public HTTPS page to Bee on the publisher's computer.
-- **Live-demo status:** the static build and core code are in place. A real v1→v2 upload and
-  resolution through the selected public gateway have not yet been verified.
+- **Live-demo status:** a test v1→v2 Feed update resolves through `bzz.limo` at the same
+  manifest URL. The final source-linked Svobodnye Novosti article and a fresh-browser demo
+  are still pending.
 
 ## Running locally
 
